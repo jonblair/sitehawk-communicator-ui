@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/sitehawk-communicator-ui/static/css/main.200bd4b6.chunk.css",
+    "main.js": "/sitehawk-communicator-ui/static/js/main.b32a41de.chunk.js",
+    "main.js.map": "/sitehawk-communicator-ui/static/js/main.b32a41de.chunk.js.map",
+    "runtime-main.js": "/sitehawk-communicator-ui/static/js/runtime-main.d790f1e2.js",
+    "runtime-main.js.map": "/sitehawk-communicator-ui/static/js/runtime-main.d790f1e2.js.map",
+    "static/css/2.d0320bc0.chunk.css": "/sitehawk-communicator-ui/static/css/2.d0320bc0.chunk.css",
+    "static/js/2.b7b7ebd3.chunk.js": "/sitehawk-communicator-ui/static/js/2.b7b7ebd3.chunk.js",
+    "static/js/2.b7b7ebd3.chunk.js.map": "/sitehawk-communicator-ui/static/js/2.b7b7ebd3.chunk.js.map",
+    "index.html": "/sitehawk-communicator-ui/index.html",
+    "precache-manifest.5f21c89f652a17b89143d22628ba111a.js": "/sitehawk-communicator-ui/precache-manifest.5f21c89f652a17b89143d22628ba111a.js",
+    "service-worker.js": "/sitehawk-communicator-ui/service-worker.js",
+    "static/css/2.d0320bc0.chunk.css.map": "/sitehawk-communicator-ui/static/css/2.d0320bc0.chunk.css.map",
+    "static/css/main.200bd4b6.chunk.css.map": "/sitehawk-communicator-ui/static/css/main.200bd4b6.chunk.css.map",
+    "static/js/2.b7b7ebd3.chunk.js.LICENSE.txt": "/sitehawk-communicator-ui/static/js/2.b7b7ebd3.chunk.js.LICENSE.txt",
+    "static/media/1002.gif": "/sitehawk-communicator-ui/static/media/1002.3068b6b8.gif",
+    "static/media/login-container.css": "/sitehawk-communicator-ui/static/media/nimbussan-reg-webfont.c7ec94e8.eot",
+    "static/media/default-welcome.css": "/sitehawk-communicator-ui/static/media/BG1.f867b191.jpg",
+    "static/media/PrivacyStatement.htm": "/sitehawk-communicator-ui/static/media/PrivacyStatement.8f6eff53.htm",
+    "static/media/SpheraCommunicatorFooter.png": "/sitehawk-communicator-ui/static/media/SpheraCommunicatorFooter.13303a9f.png",
+    "static/media/font-awesome.css": "/sitehawk-communicator-ui/static/media/fontawesome-webfont.e6cf7c6e.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d790f1e2.js",
+    "static/css/2.d0320bc0.chunk.css",
+    "static/js/2.b7b7ebd3.chunk.js",
+    "static/css/main.200bd4b6.chunk.css",
+    "static/js/main.b32a41de.chunk.js"
+  ]
+}

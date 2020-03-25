@@ -1,0 +1,16 @@
+.content {
+    position: relative;
+    background: #fff;
+    min-height: 510px;
+    padding-top: 5px;
+    margin: 0 25px 0 25px;
+    z-index: 100;
+}
+
+div {
+    display: block;
+}
+
+.bodyComponent {
+    margin-bottom: 100px;
+}

@@ -1,0 +1,6 @@
+.defaultLandingPage {
+    background: url('../../images/BG1.jpg') no-repeat center fixed;
+    background-size: cover;
+    height: 800px;
+    margin-top: -20px;
+}

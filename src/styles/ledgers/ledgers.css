@@ -1,0 +1,9 @@
+.ledgerTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    font: Ariel;
+    padding: 5px 5px 8px 8px;
+    color: #fff;
+    background-color: #666;
+    border-radius: 7px;
+}

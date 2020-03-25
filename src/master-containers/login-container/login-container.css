@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'nimbus_sansregular';
+    src: url('../../styles/fonts/nimbussan-reg-webfont.eot');
+    src: url('../../styles/fonts/nimbussan-reg-webfont.eot?#iefix') format('embedded-opentype'), url('../../styles/fonts/nimbussan-reg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'heroic_condensedregular';
+    src: url('../../styles/fonts/heroiccondensed-regular-webfont.eot');
+    src: url('../../styles/fonts/heroiccondensed-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../styles/fonts/heroiccondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'heroic_condensedbold';
+    src: url('../../styles/fonts/heroiccondensed-bold-webfont.eot');
+    src: url('../../styles/fonts/heroiccondensed-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../styles/fonts/heroiccondensed-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.body {
+    background: url(../../images/All-Solutions-Dots-Hero.jpg) no-repeat;
+    background-size: cover;
+    background-color: #042d41;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    font-family: "nimbus_sansregular", Helvetica, Arial, sans-serif;
+    color: #000;
+}
+
+.body * {
+    box-sizing: border-box;
+}
+
+.boldFont {
+    font-family: heroic_condensedbold;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+.header {
+    background-color: #F58220;
+    padding: 20px 0;
+    width: 100%;
+    top: 0;
+}
+
+.wrap {
+    margin: 0px 0px 0px 2vw;
+}
+
+.logo {
+    width: 150px;
+    display: block;
+    margin-left: 0;
+}
+
+#main {
+    height: 100%;
+}

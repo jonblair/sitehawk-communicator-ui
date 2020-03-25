@@ -1,0 +1,39 @@
+.defaultheader {
+    position: relative;
+    height: 100px;
+    background-color: #004685;
+    padding: 0px !important;
+}
+
+.otherSection {
+    background-image: url("https://appsuat.spheracloud.net/Images/Layout/Logo/sharpTriangle.png");
+    top: 0;
+    height: 100px;
+    width: 100px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.logoSection {
+    background-color: #fff;
+    left: 0;
+    display: inline-block;
+    top: 0;
+    height: 100px;
+    min-width: 120px;
+}
+
+.logoContainer {
+    left: 15px;
+    height: 90px;
+    margin-top: 5px;
+}
+
+.logoImg {
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

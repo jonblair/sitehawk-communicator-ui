@@ -3,10 +3,12 @@ import { TreeView, processTreeViewItems, handleTreeViewCheckChange,
     moveTreeViewItem, TreeViewDragAnalyzer, TreeViewDragClue } from '@progress/kendo-react-treeview'
 import { SegmentedControl } from 'segmented-control-react';
 import '@progress/kendo-react-animation'
+import $ from "jquery"; 
 
 import "../chemical-area-ledger/chemical-area-ledger.css";
 import "../../styles/ledgers/ledgers.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../../styles/font-awesome.css";
 
 
 class ChemicalAreaLedger extends React.Component {
@@ -20,7 +22,6 @@ class ChemicalAreaLedger extends React.Component {
 
     this.state = {
       chemicalAreas: [],
-      chemicalAreasHierarchy: [],
       segments: segments,
       selected: 0
     };
@@ -34,6 +35,7 @@ class ChemicalAreaLedger extends React.Component {
 
   componentDidMount() {
     this.getChemicalAreas(233, 1, 100);
+    
   }
 
   async getChemicalAreas(facilityId, pageIndex, pageSize) {
@@ -46,23 +48,8 @@ class ChemicalAreaLedger extends React.Component {
     })
     .then((response) => response.json())
     .then((data) => {
-      var myTreeViewChemicalAreas = [];
-      data.forEach(myChemicalArea => {
-        myChemicalArea.name = myChemicalArea.name + ' - ' + myChemicalArea.type.location;
-
-        if (myChemicalArea.parentChemicalAreaId === 0) {
-          myChemicalArea.items = data.filter(function(item) {
-            return item.parentChemicalAreaId === myChemicalArea.id;
-          });
-
-          myTreeViewChemicalAreas.push(myChemicalArea);
-        }
-      });
-
-
       this.setState({
         chemicalAreas: data,
-        chemicalAreaTreeView: myTreeViewChemicalAreas,
       })
     })
     .catch((error) => {
@@ -79,7 +66,7 @@ class ChemicalAreaLedger extends React.Component {
                 <div className="card-body">
                   <h5 className="card-title">{myChemicalArea.name}</h5>
                   <h6 className="card-subtitle mb-2 text-muted">{myChemicalArea.description}</h6>
-                  <p className="card-text">Use: {myChemicalArea.areaOfUse.areaOfUse}</p>
+                  <p className="card-text">Area Of Use: {myChemicalArea.areaOfUse.areaOfUse}</p>
                 </div>
               </div>
             ))}
@@ -89,15 +76,64 @@ class ChemicalAreaLedger extends React.Component {
 
 
     function ChemicalAreaTreeView(props) {
+      var myTreeViewChemicalAreas = [];
+      myTreeViewChemicalAreas = unflatten(props.treeViewData);
+
+      function unflatten(arr) {
+        var tree = [],
+            mappedArr = {},
+            arrElem,
+            mappedElem;
+  
+        for(var i = 0, len = arr.length; i < len; i++) {
+          arrElem = arr[i];
+          mappedArr[arrElem.id] = arrElem;
+          mappedArr[arrElem.id]['items'] = [];
+        }
+  
+        for (var id in mappedArr) {
+          if (mappedArr.hasOwnProperty(id)) {
+            mappedElem = mappedArr[id];
+            mappedElem.name = mappedElem.name + ' - ' + mappedElem.type.location;
+
+            if (mappedElem.parentChemicalAreaId !== 0) {
+              if (mappedArr[mappedElem['parentChemicalAreaId']] !== undefined) {
+                mappedArr[mappedElem['parentChemicalAreaId']]['items'].push(mappedElem);
+              }
+            }
+            else {
+              tree.push(mappedElem);
+            }
+
+            tree.sort((a, b) => a.name.localeCompare(b.name))
+          }
+        }
+
+        return tree;
+      }
+
       function onExpandChange(event) {
         event.item.expanded = !event.item.expanded;
       }
+
+      function ChemicalAreaItem(props) {
+        if (props.item.isArchived) {
+          return <span className='archived' key='0'>{props.item.name} <i className="fa fa-archive" aria-hidden="true" title="Archived" style={{display: "inline"}}></i></span>
+        }
+        else {
+          return <span key='0'>{props.item.name}</span>;
+        }
+      }
+
       return (
         <TreeView
-            data={props.treeViewData}
-            textField="name"
-            expandIcons={true}
-            onExpandChange={onExpandChange}
+          data={myTreeViewChemicalAreas}
+          textField="name"
+          expandIcons={true}
+          onExpandChange={onExpandChange}
+          itemRender={props => (
+            <ChemicalAreaItem item={props.item}/>
+          )}
         />
       )
     }
@@ -108,7 +144,7 @@ class ChemicalAreaLedger extends React.Component {
           return <ChemicalAreaCards chemicalAreas={props.chemicalAreas} />;
           break;
         case 1:
-          return <ChemicalAreaTreeView treeViewData={props.chemicalAreaTreeView} />;
+          return <ChemicalAreaTreeView treeViewData={props.chemicalAreas} />;
           break;
         default:
           return <ChemicalAreaCards chemicalAreas={props.chemicalAreas} />;
@@ -120,15 +156,10 @@ class ChemicalAreaLedger extends React.Component {
         <div className="content">
         <div id="chemicalAreaLedgerHeader" className="ledgerTitle">Chemical Area Ledger</div>
         <br/>
-        <SegmentedControl
-            segments={this.state.segments}
-            selected={parseInt(this.state.selected)} 
-            variant="base"
-            onChangeSegment={this.handleChange}           
-        />    
+        <SegmentedControl segments={this.state.segments} selected={parseInt(this.state.selected)} variant="base" onChangeSegment={this.handleChange}/>    
         <br/>
         <div>
-        {loadChemicalAreaView(this.state)}
+          {loadChemicalAreaView(this.state)}
         </div>  
         </div>
     )

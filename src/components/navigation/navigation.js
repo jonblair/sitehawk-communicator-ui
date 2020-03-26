@@ -39,7 +39,7 @@ class CommunicatorNavigation extends React.Component {
       }
   
       var item = $(event.currentTarget).parent("li"),
-        idx = item.index();
+      idx = item.index();
   
       if( current === idx ) {
         item.removeClass("cbp-hropen");

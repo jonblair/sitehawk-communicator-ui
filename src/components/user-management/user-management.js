@@ -22,12 +22,17 @@ class UserManagement extends React.Component {
   }
 
   export = () => {
-      console.log(this._exporter);
       this._exporter.save();
   }
 
   componentDidMount() {
-    this.getUsers(233, this.state.page, this.state.size);
+    var user = JSON.parse(localStorage.getItem('user'));
+    if (user.id === 1257) {
+      this.getUsers(233, this.state.page, this.state.size);
+    }
+    else if (user.id === 44338) {
+      this.getUsers(6628, this.state.page, this.state.size);
+    }
   }
 
   pageChange = (event) => {

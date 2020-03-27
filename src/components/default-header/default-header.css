@@ -1,7 +1,14 @@
-.defaultheader {
+.defaultHeader {
     position: relative;
     height: 100px;
     background-color: #004685;
+    padding: 0px !important;
+}
+
+.corpHeader {
+    position: relative;
+    height: 100px;
+    background-color: #5A5A5A;
     padding: 0px !important;
 }
 

@@ -34,8 +34,13 @@ class ChemicalAreaLedger extends React.Component {
   }
 
   componentDidMount() {
-    this.getChemicalAreas(233, 1, 100);
-    
+    var user = JSON.parse(localStorage.getItem('user'));
+    if (user.id === 1257) {
+      this.getChemicalAreas(233, 1, 100);
+    }
+    else if (user.id === 44338) {
+      this.getChemicalAreas(6628, 1, 100);
+    }
   }
 
   async getChemicalAreas(facilityId, pageIndex, pageSize) {
@@ -156,7 +161,7 @@ class ChemicalAreaLedger extends React.Component {
         <div className="content">
         <div id="chemicalAreaLedgerHeader" className="ledgerTitle">Chemical Area Ledger</div>
         <br/>
-        <SegmentedControl segments={this.state.segments} selected={parseInt(this.state.selected)} variant="base" onChangeSegment={this.handleChange}/>    
+          <SegmentedControl segments={this.state.segments} selected={parseInt(this.state.selected)} variant="base" onChangeSegment={this.handleChange}/>    
         <br/>
         <div>
           {loadChemicalAreaView(this.state)}

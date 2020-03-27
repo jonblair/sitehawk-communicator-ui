@@ -19,31 +19,33 @@ class DefaultHeader extends React.Component {
       }
     }
 
+    function HeaderLogo() {
+      return (
+        <div>
+          <div className="logoSection">
+            <div className="logoContainer">
+              <img id="logoImg" className="logoImg" src={require("../../images/1002.gif")} alt="Logo" />
+            </div>
+          </div>
+          <div className="otherSection">
+          </div>
+        </div>
+      )
+    }
+
     function FacilityAdminHeader() {
       return (
         <div id="divHeader" runat="server" className="defaultHeader">
-        <div className="logoSection">
-          <div className="logoContainer">
-            <img id="logoImg" className="logoImg" src={require("../../images/1002.gif")} alt="Logo" />
-          </div>
+          <HeaderLogo />
         </div>
-        <div className="otherSection">
-        </div>
-      </div>
       )
     }
 
     function CorporationHeader() {
       return (
         <div id="divHeader" runat="server" className="corpHeader">
-        <div className="logoSection">
-          <div className="logoContainer">
-            <img id="logoImg" className="logoImg" src={require("../../images/1002.gif")} alt="Logo" />
-          </div>
+          <HeaderLogo />
         </div>
-        <div className="otherSection">
-        </div>
-      </div>
       )
     }
 

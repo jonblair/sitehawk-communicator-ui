@@ -2,7 +2,6 @@
   "name": "sitehawk-communicator-ui",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jonblair.github.io/sitehawk-communicator-ui/",
   "dependencies": {
     "@progress/kendo-data-query": "^1.5.2",
     "@progress/kendo-drawing": "^1.6.0",

@@ -2,6 +2,7 @@ import React from "react";
 import "../login-form/login-form.css";
 import "moment/moment";
 import { withRouter } from 'react-router-dom' 
+//import UserService from '../../_services/user-service'
 
 class LoginForm extends React.Component {
 
@@ -11,6 +12,7 @@ class LoginForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this._userSevice = new UserService;
   }
 
   async handleSubmit(e) {
@@ -43,6 +45,7 @@ class LoginForm extends React.Component {
   }
 
   async getUserData(userId) {
+    //this._userSevice.getCurrentUser(userId);
     await fetch(`/api/v1/User/${userId}`, {
       method: 'GET',
       headers: {

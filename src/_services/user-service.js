@@ -2,8 +2,11 @@ import {fetchCurrentUserPending,
     fetchCurrentUserSuccess, 
     fetchCurrentUserError } from '../_redux/_actions/current-user/current-user-actions';
 
+
+    
 export default class UserService {
-    getCurrentUser() {
+
+    getCurrentUser(userId) {
         return dispatch => {
             dispatch(fetchCurrentUserPending());
             await fetch(`/api/v1/User/${userId}`, {
@@ -24,4 +27,6 @@ export default class UserService {
             })
         }
     }
+
+
 }

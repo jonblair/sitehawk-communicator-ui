@@ -12,7 +12,7 @@ class LoginForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this._userSevice = new UserService;
+    //this._userSevice = new UserService;
   }
 
   async handleSubmit(e) {

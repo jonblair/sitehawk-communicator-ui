@@ -123,7 +123,7 @@ class ChemicalAreaLedger extends React.Component {
 
       function ChemicalAreaItem(props) {
         if (props.item.isArchived) {
-          return <span className='archived' key='0'>{props.item.name} <i className="fa fa-archive" aria-hidden="true" title="Archived" style={{display: "inline"}}></i></span>
+          return <span className='archived' key='0'>{props.item.name}&nbsp;<i className="fa fa-archive" aria-hidden="true" title="Archived" style={{display: "inline"}}></i></span>
         }
         else {
           return <span key='0'>{props.item.name}</span>;

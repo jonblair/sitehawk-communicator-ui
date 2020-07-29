@@ -18,6 +18,7 @@ div {
 .archived {
     vertical-align: top;
     color: gray;
+    text-decoration: line-through;
 }
 /* 
 .fa {
